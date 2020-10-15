@@ -1,0 +1,6 @@
+# Copy to config.py and edit the following settings
+datapath = '/path/to/data/directory'
+baseurl = 'https://example.com/onlyonce'
+
+if __name__ == '__main__':
+    print(datapath, baseurl)
