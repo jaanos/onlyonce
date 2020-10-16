@@ -16,8 +16,13 @@ def index(s=""):
             with open(datafile, encoding="UTF-8") as f:
                 contents = f.read()
             os.system("shred -u %s" % datafile)
+            try:
+                with open(datafile, encoding="UTF-8") as f:
+                    raise ValueError
+            except OSError:
+                pass
             return render_template("something.html", contents=contents)
-        except OSError:
+        except (OSError, ValueError):
             pass
     return render_template("nothing.html")
 
