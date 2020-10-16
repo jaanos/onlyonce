@@ -1,0 +1,2 @@
+config.py.template linguist-language=python
+onlyonce.wsgi linguist-language=python
